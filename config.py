@@ -13,21 +13,21 @@ class Config(object):
 class DevelopmentConfig(Config):
     TESTING = False
     DEBUG = True
-    IP_HOST = '191.252.185.216'
+    IP_HOST = 'localhost'
     PORT_HOST = 8082
     URL_MAIN = 'http://%s:%s/' % (IP_HOST, PORT_HOST)
 
 class TestingConfig(Config):
     TESTING = True
     DEBUG = True
-    IP_HOST = '191.252.185.216' # Aqui geralmente é um IP de um servidor na nuvem e não o endereço da máquina local
+    IP_HOST = 'localhost' # Aqui geralmente é um IP de um servidor na nuvem e não o endereço da máquina local
     PORT_HOST = 5000
     URL_MAIN = 'http://%s:%s/' % (IP_HOST, PORT_HOST)
 
 class ProductionConfig(Config):
     DEBUG = False
     TESTING = False
-    IP_HOST = '191.252.185.216' # Aqui geralmente é um IP de um servidor na nuvem e não o endereço da máquina local
+    IP_HOST = 'localhost' # Aqui geralmente é um IP de um servidor na nuvem e não o endereço da máquina local
     PORT_HOST = 8080
     URL_MAIN = 'http://%s:%s/' % (IP_HOST, PORT_HOST)
 
