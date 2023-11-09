@@ -1,0 +1,136 @@
+Skip to content
+Product
+Solutions
+Open Source
+Pricing
+Search
+Sign in
+Sign up
+matheussmachado
+/
+admin-e-vendas-para-loja-com-flask
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+Security
+Insights
+admin-e-vendas-para-loja-com-flask/app/templates/base.html
+@matheussmachado
+matheussmachado melhorado a interface de login
+Latest commit 7fa9b71 on Sep 25, 2020
+ History
+ 1 contributor
+93 lines (72 sloc)  2.93 KB
+ 
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}{% endblock %} - PetClub</title>
+      
+    
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+    
+    
+        <link href="/admin/static/bootstrap/bootstrap3/swatch/cosmo/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+        
+        <link href="/admin/static/admin/css/bootstrap3/admin.css?v=1.1.1" rel="stylesheet">
+    <link href="/admin/static/admin/css/bootstrap3/submenu.css" rel="stylesheet">
+        
+        <style>
+        body {
+            padding-top: 4px;
+        }
+        </style>                    
+  </head>
+
+  <body>
+    
+    <div class="container">
+      {%block navbar %}
+      <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#admin-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          
+          <a class="navbar-brand">PetClub</a>
+          
+        </div>
+        <!-- navbar content -->
+        <div class="collapse navbar-collapse" id="admin-navbar-collapse">
+        <ul class="nav navbar-nav">
+        {% block ul %}                                
+
+        {% endblock %}
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            {% block li_navbar_right %}
+
+            {% endblock %}
+          </ul>
+        </div>
+      </nav>
+    </div>  
+
+      {% endblock %}
+{% block content %}      
+      
+{% endblock %}
+
+{% block flash_error %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+        {% with error = get_flashed_messages(category_filter=["error"]) %}
+            {% if error %}
+                {% for err in error %}
+                    <div class="alert alert-dismissible alert-warning">
+                        <h4><strong>Erro:</strong> {{ err }}</h4>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+    <script src="/admin/static/vendor/jquery.min.js?v=3.3.1" type="text/javascript"></script>
+    <script src="/admin/static/bootstrap/bootstrap3/js/bootstrap.min.js?v=3.3.5" type="text/javascript"></script>
+    <script src="/admin/static/vendor/moment.min.js?v=2.22.2" type="text/javascript"></script>
+    <script src="/admin/static/vendor/select2/select2.min.js?v=3.5.2" type="text/javascript"></script>
+    <script src="/admin/static/admin/js/helpers.js?v=1.0.0" type="text/javascript"></script>
+    
+    
+
+    
+    
+  </body>
+
+</html>
+Footer
+© 2023 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+admin-e-vendas-para-loja-com-flask/base.html at master · matheussmachado/admin-e-vendas-para-loja-com-flask · GitHub
